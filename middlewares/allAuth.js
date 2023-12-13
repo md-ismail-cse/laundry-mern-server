@@ -1,6 +1,6 @@
-const jwt = require("jsonwebtoken");
-require("dotenv").config();
-const adminLoginCheck = (req, res, next) => {
+import jwt from "jsonwebtoken";
+
+const allAuth = async (req, res, next) => {
   const { authorization } = req.headers;
   try {
     const token = authorization.split(" ")[1];
@@ -14,4 +14,4 @@ const adminLoginCheck = (req, res, next) => {
   }
 };
 
-export default adminLoginCheck;
+export default allAuth;
